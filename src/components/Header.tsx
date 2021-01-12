@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import Logo from '../assets/logo-bonus.svg';
 import Score from './Score';
+import { headerVariants } from '../animations/variants';
 
 const HeaderContainer = styled(motion.div)`
   display: flex;
@@ -26,7 +27,11 @@ const GameLogo = styled.img`
 
 const Header = () => {
   return (
-    <HeaderContainer>
+    <HeaderContainer
+      variants={headerVariants}
+      initial='hidden'
+      animate='visible'
+    >
       <GameLogo src={Logo} />
       <Score />
     </HeaderContainer>

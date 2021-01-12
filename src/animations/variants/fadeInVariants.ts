@@ -1,4 +1,4 @@
-export const backdropVariants = {
+export const fadeInVariants = {
   hidden: {
     opacity: 0,
   },

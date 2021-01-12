@@ -2,7 +2,7 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { IoMdClose } from 'react-icons/io';
 import styled from 'styled-components';
-import { backdropVariants, modalVariants } from '../animations/variants';
+import { fadeInVariants, modalVariants } from '../animations/variants';
 import RulesImage from '../assets/image-rules-bonus.svg';
 
 interface IModalProps {
@@ -77,7 +77,7 @@ const Modal = ({ showModal, setShowModal }: IModalProps) => {
     <AnimatePresence exitBeforeEnter>
       {showModal && (
         <Backdrop
-          variants={backdropVariants}
+          variants={fadeInVariants}
           initial='hidden'
           animate='visible'
           exit='hidden'

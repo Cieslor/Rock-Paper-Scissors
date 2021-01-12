@@ -2,8 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useGameContext } from '../context/gameContext';
+import { fadeInVariants } from '../animations/variants';
 
-const ScoreContainer = styled(motion.div)`
+const ScoreContainer = styled.div`
   width: 100%;
   max-width: 150px;
   padding: 10px 0;
@@ -12,7 +13,7 @@ const ScoreContainer = styled(motion.div)`
   border-radius: ${(props) => props.theme.utils.borderRadius};
 `;
 
-const ScoreText = styled(motion.p)`
+const ScoreText = styled.p`
   font-size: 18px;
   color: ${(props) => props.theme.colors.scoreBlue};
   text-transform: uppercase;
@@ -33,7 +34,14 @@ const Score = () => {
   return (
     <ScoreContainer>
       <ScoreText>Score</ScoreText>
-      <ScoreNumber>{score}</ScoreNumber>
+      <ScoreNumber
+        variants={fadeInVariants}
+        initial='hidden'
+        animate='visible'
+        transition={{ delay: 0.5 }}
+      >
+        {score}
+      </ScoreNumber>
     </ScoreContainer>
   );
 };

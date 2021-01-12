@@ -1,2 +1,3 @@
-export * from './backdropVariants';
+export * from './fadeInVariants';
 export * from './modalVariants';
+export * from './headerVariants';
