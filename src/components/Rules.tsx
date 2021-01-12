@@ -6,7 +6,7 @@ import Modal from './Modal';
 const RulesContainer = styled.div`
   position: absolute;
   bottom: 30px;
-  right: 30px;
+  right: 25px;
 `;
 
 const Rules = () => {

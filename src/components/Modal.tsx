@@ -43,7 +43,6 @@ const ModalHeader = styled.div`
 `;
 
 const ModalTitle = styled.p`
-  margin: 0;
   font-size: 28px;
   font-weight: bold;
   text-transform: uppercase;
