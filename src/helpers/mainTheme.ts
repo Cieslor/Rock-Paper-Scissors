@@ -1,6 +1,8 @@
 export const mainTheme = {
   breakpoints: {
+    extraSmallMobile: '320px',
     mobile: '375px',
+    largeMobile: '475px',
     desktop: '1366px',
   },
   colors: {
@@ -8,13 +10,20 @@ export const mainTheme = {
     dark: 'hsl(229, 25%, 31%)',
     headerOutline: 'hsl(217, 16%, 45%)',
     white: '#fff',
+    tokenInnerBackground:
+      'radial-gradient(circle at 50% 60%, #fff 70%, #e0e0e0 70%)',
   },
   gradients: {
-    scissors: 'linear-gradient(hsl(39, 89%, 49%) 90%, hsl(40, 84%, 53%) 10%)',
-    paper: 'linear-gradient(hsl(230, 89%, 62%) 90%, hsl(230, 89%, 65%)',
-    rock: 'linear-gradient(hsl(349, 71%, 52%) 90%, hsl(349, 70%, 56%)',
-    lizard: 'linear-gradient(hsl(261, 73%, 60%) 90%, hsl(261, 72%, 63%)',
-    spock: 'linear-gradient(hsl(189, 59%, 53%) 90%, hsl(189, 58%, 57%)',
+    scissors:
+      'radial-gradient(circle at 50% 40%, hsl(40, 84%, 53%) 70%, hsl(39, 89%, 44%) 70%)',
+    paper:
+      'radial-gradient(circle at 50% 40%, hsl(230, 89%, 65%) 70%, hsl(230, 89%, 60%) 70%)',
+    rock:
+      'radial-gradient(circle at 50% 40%, hsl(349, 70%, 56%) 70%, hsl(349, 71%, 48%) 70%)',
+    lizard:
+      'radial-gradient(circle at 50% 40%, hsl(261, 72%, 63%) 70%, hsl(261, 73%, 59%) 70%)',
+    spock:
+      'radial-gradient(circle at 50% 40%, hsl(189, 58%, 57%) 70%, hsl(189, 59%, 47%) 70%)',
   },
   utils: {
     borderRadius: '9px',

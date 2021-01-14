@@ -8,6 +8,7 @@ import { headerVariants } from '../animations/variants';
 const HeaderContainer = styled(motion.div)`
   display: flex;
   justify-content: space-between;
+  width: 100%;
   max-width: 750px;
   margin: 0 auto;
   padding: 20px 25px;
