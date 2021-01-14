@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled, { ThemeContext } from 'styled-components';
+import { useGameActionsContext } from '../context/gameContext';
 import GameToken from './GameToken';
-import { getIconByName, IconsType } from '../helpers/getIconComponent';
+import { getIconByName } from '../helpers/getIconComponent';
 import Pentagon from '../assets/bg-pentagon.svg';
 import { tokenPickerContainerVariants } from '../animations/variants';
 import { tokenPickerSquareWrapperHover } from '../animations/hovers';
+import { TokenTypes } from '../types';
 
 interface ITokenPickerTokenWrapperProps {
   top?: string;
@@ -92,8 +94,19 @@ const wrappersPositions = [
 
 const TokenPicker = () => {
   const { gradients } = useContext(ThemeContext);
+  const setGameValue = useGameActionsContext();
 
   const gradientsArray = Object.entries(gradients);
+
+  const pickToken = (tokenType: TokenTypes): void => {
+    setGameValue((prevState) => {
+      return {
+        ...prevState,
+        playerPick: tokenType,
+        isBattleOn: true,
+      };
+    });
+  };
 
   return (
     <TokenPickerContainer
@@ -114,11 +127,12 @@ const TokenPicker = () => {
               variants={tokenPickerSquareWrapperHover}
               whileHover='hover'
               whileTap='tap'
+              onClick={() => pickToken(gradientsArray[index][0] as TokenTypes)}
             >
               <GameToken
                 key={`${gradientsArray[index][0]}-token`}
                 background={gradientsArray[index][1] as string}
-                icon={getIconByName(gradientsArray[index][0] as IconsType)}
+                icon={getIconByName(gradientsArray[index][0] as TokenTypes)}
               ></GameToken>
             </TokenPickerTokenWrapper>
           )

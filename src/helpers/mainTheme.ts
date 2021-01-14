@@ -12,6 +12,7 @@ export const mainTheme = {
     white: '#fff',
     tokenInnerBackground:
       'radial-gradient(circle at 50% 60%, #fff 70%, #e0e0e0 70%)',
+    battleTokenPlaceholder: '#010a28',
   },
   gradients: {
     scissors:

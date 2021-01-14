@@ -12,8 +12,6 @@ const Icons = {
   spock: SpockIcon,
 };
 
-export type IconsType = 'lizard' | 'paper' | 'rock' | 'scissors' | 'spock';
-
 export const getIconByName = (name: keyof typeof Icons) => {
   return Icons[name];
 };
