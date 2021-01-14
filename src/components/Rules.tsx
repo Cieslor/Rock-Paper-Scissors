@@ -9,6 +9,11 @@ const RulesContainer = styled(motion.div)`
   position: absolute;
   bottom: 30px;
   right: 25px;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    right: 50%;
+    transform: translateX(50%);
+  }
 `;
 
 const Rules = () => {
