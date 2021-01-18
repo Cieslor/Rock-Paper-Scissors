@@ -1,4 +1,5 @@
-import { TokenTypesArray, TokenTypes } from '../types';
+import { TokenTypes } from "../types";
+import { TokenTypesArray } from "../constants";
 
 export const getRandomToken = () => {
   return TokenTypesArray[

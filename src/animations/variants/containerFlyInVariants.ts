@@ -1,4 +1,4 @@
-export const tokenPickerContainerVariants = {
+export const containerFlyInVariants = {
   hidden: {
     scale: 0,
     opacity: 0,
@@ -9,7 +9,7 @@ export const tokenPickerContainerVariants = {
     transition: {
       scale: {
         duration: 0.8,
-        ease: 'backInOut',
+        ease: "backInOut",
       },
       opacity: {
         duration: 1.5,
