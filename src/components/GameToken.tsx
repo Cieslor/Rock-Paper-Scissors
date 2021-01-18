@@ -7,7 +7,7 @@ interface IGameTokenContainerProps {
 
 interface IGameTokenProps {
   background: string;
-  icon: string;
+  icon: string | undefined;
 }
 
 const GameTokenContainer = styled.div<IGameTokenContainerProps>`

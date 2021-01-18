@@ -1,7 +1,11 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { TokenTypes } from "../types";
 
 interface IGameContext {
   score: number;
+  playerPick: TokenTypes | undefined;
+  housePick: TokenTypes | undefined;
+  isBattleOn: boolean;
 }
 
 interface IProps {
@@ -19,15 +23,24 @@ export const useGameActionsContext = () => useContext(GameActionsContext);
 export const GameContextProvider = ({ children }: IProps) => {
   const [gameValues, setGameValues] = useState<IGameContext>({
     score: 0,
+    playerPick: undefined,
+    housePick: undefined,
+    isBattleOn: false,
   });
 
   useEffect(() => {
-    const gameData = localStorage.getItem('gameData');
-    gameData && setGameValues(JSON.parse(gameData));
+    const gameScore = localStorage.getItem("gameScore");
+    gameScore &&
+      setGameValues((prevState) => {
+        return {
+          ...prevState,
+          score: JSON.parse(gameScore) as number,
+        };
+      });
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('gameData', JSON.stringify(gameValues));
+    localStorage.setItem("gameScore", JSON.stringify(gameValues.score));
   }, [gameValues]);
 
   return (
