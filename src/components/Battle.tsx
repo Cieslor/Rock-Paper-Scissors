@@ -14,6 +14,7 @@ import { getBattleResult } from "../helpers/getBattleResult";
 import { BattleResultsTypes } from "../types";
 import { BattleResults, BattleResultsTexts, PLAY_AGAIN } from "../constants";
 import GameToken from "./GameToken";
+import WinningSideIndicator from "./WinningSIdeIndicator";
 import { PrimaryButton } from "./Buttons/Buttons";
 
 interface IResultContainerProps {
@@ -80,6 +81,7 @@ const SideTokenContainer = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
 `;
 
 const ResultContainer = styled(motion.div)<IResultContainerProps>`
@@ -90,6 +92,7 @@ const ResultContainer = styled(motion.div)<IResultContainerProps>`
   flex: ${(props) => props.flex};
   min-width: 50px;
   padding-top: 70px;
+  z-index: 2;
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     order: 3;
@@ -186,6 +189,9 @@ const Battle = () => {
           </SideTitle>
         </SideTitleContainer>
         <SideTokenSquareWrapper variants={fadeInVariants}>
+          {!!battleResult && battleResult === BattleResults.playerWon && (
+            <WinningSideIndicator width="125%" opacity={0.1} />
+          )}
           <SideTokenContainer
             variants={slideInFromLeft}
             initial="hidden"
@@ -234,6 +240,9 @@ const Battle = () => {
           </SideTitle>
         </SideTitleContainer>
         <SideTokenSquareWrapper variants={fadeInVariants}>
+          {!!battleResult && battleResult === BattleResults.houseWon && (
+            <WinningSideIndicator width="125%" opacity={0.1} />
+          )}
           <SideTokenContainer
             variants={slideInFromRight}
             initial="hidden"
