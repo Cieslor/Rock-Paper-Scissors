@@ -25,6 +25,10 @@ code {
     monospace;
 }
 
+#root {
+  overflow: hidden;
+}
+
 p {
   margin: 0;
 }

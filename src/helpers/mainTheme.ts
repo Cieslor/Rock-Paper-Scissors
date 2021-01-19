@@ -11,6 +11,7 @@ export const mainTheme = {
     dark: "hsl(229, 25%, 31%)",
     headerOutline: "hsl(217, 16%, 45%)",
     white: "#fff",
+    grey: "#666",
     tokenInnerBackground:
       "radial-gradient(circle at 50% 60%, #fff 70%, #e0e0e0 70%)",
     battleTokenPlaceholder: "#010a28",
